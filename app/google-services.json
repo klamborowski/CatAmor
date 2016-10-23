@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "105290795684",
+    "firebase_url": "https://catamor-147313.firebaseio.com",
+    "project_id": "catamor-147313",
+    "storage_bucket": "catamor-147313.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:105290795684:android:368de1bcf876497c",
+        "android_client_info": {
+          "package_name": "pl.klamborowski.catamor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "105290795684-avl6h7hs04uq1vbba2llert67fcl35bq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABx69dy2f0sBXU8hz3BU3jSSlL-MjyNrs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
