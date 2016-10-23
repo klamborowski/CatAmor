@@ -10,7 +10,66 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="@dimen/default_padding">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:id="@+id/login_text"
+                style="@style/LoginMainText"
+                android:text="@string/login_to_continue"/>
+
+            <FrameLayout
+                android:id="@+id/facebook_login_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/login_text"
+                android:onClick="@{viewModel.onFacebookClicked}">
+
+                <TextView
+                    style="@style/LoginButton.Facebook"
+                    android:text="@string/log_in_with_fb">
+                </TextView>
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="start|center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/com_facebook_button_icon_white"/>
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/google_login_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/facebook_login_btn"
+                android:layout_marginTop="@dimen/default_padding"
+                android:onClick="@{viewModel.onGoogleClicked}">
+
+                <TextView
+                    style="@style/LoginButton.Google"
+                    android:text="@string/log_in_with_google"/>
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="start|center_vertical"
+                    android:layout_marginLeft="8dp"
+                    android:src="@drawable/common_google_signin_btn_icon_light"/>
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/app_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/ic_launcher"/>
+        </RelativeLayout>
     </RelativeLayout>
 </layout>

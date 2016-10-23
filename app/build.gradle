@@ -83,6 +83,10 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     //GOOGLE
     compile 'com.android.support:appcompat-v7:25.0.0'
+    //PLAY SERVICES
+    compile 'com.google.android.gms:play-services-plus:9.6.1'
+    compile 'com.google.android.gms:play-services-base:9.6.1'
+    compile 'com.google.android.gms:play-services-auth:9.6.1'
     //FABRIC
     compile('com.crashlytics.sdk.android:crashlytics:2.6.5@aar') {
         transitive = true;
@@ -132,6 +136,8 @@ dependencies {
         transitive = true;
         exclude group: 'com.android.support', module: 'appcompat-v7'
     }
+    //FACEBOOK
+    compile 'com.facebook.android:facebook-android-sdk:4.13.2'
 }
 
 apply plugin: 'com.google.gms.google-services'

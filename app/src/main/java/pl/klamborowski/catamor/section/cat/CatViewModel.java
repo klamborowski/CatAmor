@@ -12,6 +12,7 @@ import pl.klamborowski.catamor.config.Config;
 import pl.klamborowski.catamor.databinding.ActivityCatBinding;
 import pl.klamborowski.catamor.model.CatImage;
 import pl.klamborowski.catamor.model.GetImageResponse;
+import pl.klamborowski.catamor.preferences.AccountManager;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -54,7 +55,8 @@ public class CatViewModel extends BaseCatViewModel<ActivityCatBinding> {
         cat.set(null);
 
         ServiceFactory.createRetrofitService(GetImageService.class)
-                .getImage(Config.Api.API_KEY, GetImageService.Format.XML.getFormatString(), "12345")
+                .getImage(Config.Api.API_KEY, GetImageService.Format.XML.getFormatString(),
+                        AccountManager.getInstance().getAccount().getId())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<GetImageResponse>() {

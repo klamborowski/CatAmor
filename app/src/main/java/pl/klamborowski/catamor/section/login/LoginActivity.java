@@ -1,5 +1,7 @@
 package pl.klamborowski.catamor.section.login;
 
+import android.content.Intent;
+
 import cz.kinst.jakub.viewmodelbinding.ViewModelBindingConfig;
 import pl.klamborowski.catamor.BR;
 import pl.klamborowski.catamor.R;
@@ -14,5 +16,11 @@ public class LoginActivity extends BaseCatActivity<ActivityLoginBinding, LoginVi
     @Override
     public ViewModelBindingConfig getViewModelBindingConfig() {
         return new ViewModelBindingConfig<>(R.layout.activity_login, LoginViewModel.class, BR.viewModel);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        getViewModel().onActivityResult(requestCode, resultCode, data);
+
     }
 }
