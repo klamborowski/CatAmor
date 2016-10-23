@@ -34,7 +34,7 @@ import pl.klamborowski.catamor.base.BaseCatViewModel;
 import pl.klamborowski.catamor.databinding.ActivityLoginBinding;
 import pl.klamborowski.catamor.model.Account;
 import pl.klamborowski.catamor.preferences.AccountManager;
-import pl.klamborowski.catamor.section.cat.CatActivity;
+import pl.klamborowski.catamor.section.home.HomeActivity;
 import pl.klamborowski.catamor.util.DialogHelper;
 
 /**
@@ -173,7 +173,7 @@ public class LoginViewModel extends BaseCatViewModel<ActivityLoginBinding> {
     }
 
     private void startNextActivity() {
-        CatActivity.startCatActivity(getContext());
+        HomeActivity.startHomeActivity(getContext());
         getActivity().finish();
     }
 

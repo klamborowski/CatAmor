@@ -12,4 +12,9 @@
     <string name="sending_much_love_to_this_cat">Sending so much love &lt;3</string>
     <string name="adding_to_fav">Favourite: adding...</string>
     <string name="removing_from_fav">Favourite: removing...</string>
+    <string name="logout">Logout</string>
+    <string name="favourite">Favourites</string>
+    <string name="home">Home</string>
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
 </resources>

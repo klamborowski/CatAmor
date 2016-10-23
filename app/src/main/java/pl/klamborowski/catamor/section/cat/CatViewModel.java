@@ -14,7 +14,7 @@ import pl.klamborowski.catamor.api.ServiceFactory;
 import pl.klamborowski.catamor.api.VoteOnCatService;
 import pl.klamborowski.catamor.base.BaseCatViewModel;
 import pl.klamborowski.catamor.config.Config;
-import pl.klamborowski.catamor.databinding.ActivityCatBinding;
+import pl.klamborowski.catamor.databinding.FragmentCatBinding;
 import pl.klamborowski.catamor.model.server.CatImage;
 import pl.klamborowski.catamor.model.server.GetImageResponse;
 import pl.klamborowski.catamor.model.server.VoteOnCatResponse;
@@ -28,7 +28,7 @@ import rx.schedulers.Schedulers;
  * Created by Artur on 23.10.2016.
  */
 
-public class CatViewModel extends BaseCatViewModel<ActivityCatBinding> {
+public class CatViewModel extends BaseCatViewModel<FragmentCatBinding> {
     private static final int                       MAX_SCORE = 10;
     public final         ObservableField<CatImage> cat       = new ObservableField<>();
 

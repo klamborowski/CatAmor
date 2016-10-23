@@ -14,4 +14,8 @@ public class Account {
 
     private String id;
     private String name;
+
+    public String getName() {
+        return name;
+    }
 }
