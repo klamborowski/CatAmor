@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:fresco="http://schemas.android.com/apk/res-auto"
-    >
+        xmlns:fresco="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -49,7 +48,7 @@
                 android:layout_centerHorizontal="true"
                 android:onClick="@{viewModel.onFavBtnClicked}"
                 fresco:backgroundImage="@android:color/darker_gray"
-                fresco:placeholderImage="@{viewModel.cat.getFavourite() ? @drawable/ic_fav_on : @drawable/ic_fav_off}"
+                fresco:placeholderImage="@{viewModel.cat.favourite ? @drawable/ic_fav_on : @drawable/ic_fav_off}"
                 fresco:placeholderImageScaleType="centerInside"
                 fresco:roundAsCircle="true"/>
 
@@ -58,7 +57,7 @@
                 android:layout_height="@dimen/btn_size"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:onClick="@{viewModel.onDislikeClicked}"
+                android:onClick="@{viewModel.onIgnoreClicked}"
                 fresco:backgroundImage="@color/orange"
                 fresco:placeholderImage="@drawable/ic_navigation_close"
                 fresco:placeholderImageScaleType="centerInside"
@@ -70,7 +69,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@id/buttons_container"
-            app:imageUrl="@{viewModel.cat.getUrl}"
+            android:onClick="@{viewModel.openCatInBrowser}"
+            app:imageUrl="@{viewModel.cat.url}"
             fresco:fadeDuration="300"
             fresco:progressBarAutoRotateInterval="1000"
             fresco:progressBarImage="@mipmap/image_progress"

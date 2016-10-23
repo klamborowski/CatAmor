@@ -1,6 +1,6 @@
 package pl.klamborowski.catamor.api;
 
-import pl.klamborowski.catamor.model.GetImageResponse;
+import pl.klamborowski.catamor.model.server.GetImageResponse;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 import rx.Observable;

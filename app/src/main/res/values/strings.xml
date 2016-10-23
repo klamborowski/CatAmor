@@ -9,4 +9,7 @@
     <string name="log_in_with_google_network_failed">Google sign in failure: Network error occurred.</string>
     <string name="log_in_with_google_failed">Google sign in failure: Error occurred.</string>
     <string name="error_occurred">Error occurred</string>
+    <string name="sending_much_love_to_this_cat">Sending so much love &lt;3</string>
+    <string name="adding_to_fav">Favourite: adding...</string>
+    <string name="removing_from_fav">Favourite: removing...</string>
 </resources>

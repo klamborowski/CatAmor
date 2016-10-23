@@ -1,4 +1,4 @@
-package pl.klamborowski.catamor.model;
+package pl.klamborowski.catamor.model.server;
 
 import org.simpleframework.xml.Element;
 
@@ -10,7 +10,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class Response {
+public class VoteData {
     @Element
-    private Data data;
+    private Votes votes;
 }

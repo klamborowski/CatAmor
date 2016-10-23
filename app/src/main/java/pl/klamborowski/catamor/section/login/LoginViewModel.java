@@ -55,7 +55,11 @@ public class LoginViewModel extends BaseCatViewModel<ActivityLoginBinding> {
     @Override
     public void onViewModelCreated() {
         super.onViewModelCreated();
-        setupSocialLogin();
+        if (AccountManager.getInstance().isLoggedIn()) {
+            startNextActivity();
+        } else {
+            setupSocialLogin();
+        }
     }
 
     private void setupSocialLogin() {
@@ -165,7 +169,10 @@ public class LoginViewModel extends BaseCatViewModel<ActivityLoginBinding> {
         AccountManager.getInstance().saveAccount(
                 new Account(id,
                         name));
+        startNextActivity();
+    }
 
+    private void startNextActivity() {
         CatActivity.startCatActivity(getContext());
         getActivity().finish();
     }

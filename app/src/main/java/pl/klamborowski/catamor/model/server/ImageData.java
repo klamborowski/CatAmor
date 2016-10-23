@@ -1,4 +1,4 @@
-package pl.klamborowski.catamor.model;
+package pl.klamborowski.catamor.model.server;
 
 import org.simpleframework.xml.Element;
 
@@ -10,7 +10,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class Images {
+public class ImageData {
     @Element
-    private CatImage image;
+    private Images images;
 }

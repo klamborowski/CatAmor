@@ -1,4 +1,4 @@
-package pl.klamborowski.catamor.model;
+package pl.klamborowski.catamor.model.server;
 
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
@@ -14,6 +14,6 @@ import lombok.Setter;
 @Root(name = "response")
 public class GetImageResponse {
     @Element(name = "data")
-    private Data data;
+    private ImageData data;
 }
 
