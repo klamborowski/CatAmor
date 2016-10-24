@@ -1,6 +1,8 @@
 package pl.klamborowski.catamor.model.server;
 
-import org.simpleframework.xml.Element;
+import org.simpleframework.xml.ElementList;
+
+import java.util.List;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -11,6 +13,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ImageData {
-    @Element
-    private Images images;
+    @ElementList(name = "images")
+    List<CatImage> images;
 }

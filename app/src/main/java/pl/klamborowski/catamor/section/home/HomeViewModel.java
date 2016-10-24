@@ -13,6 +13,7 @@ import pl.klamborowski.catamor.base.BaseCatViewModel;
 import pl.klamborowski.catamor.databinding.ActivityHomeBinding;
 import pl.klamborowski.catamor.preferences.AccountManager;
 import pl.klamborowski.catamor.section.cat.CatFragment;
+import pl.klamborowski.catamor.section.favourites.FavouritesFragment;
 import pl.klamborowski.catamor.section.login.LoginActivity;
 
 /**
@@ -85,7 +86,7 @@ public class HomeViewModel extends BaseCatViewModel<ActivityHomeBinding>
     }
 
     private void openFavourites() {
-//TODO
+        ((HomeActivity) getActivity()).switchMainFragment(FavouritesFragment.class, FavouritesFragment.TAG);
     }
 
     private void logout() {

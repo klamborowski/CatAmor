@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.orhanobut.logger.Logger;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import pl.klamborowski.catamor.R;
 import pl.klamborowski.catamor.api.ChangeFavouriteStatusService;
 import pl.klamborowski.catamor.api.GetImageService;
@@ -66,6 +67,8 @@ public class CatViewModel extends BaseCatViewModel<FragmentCatBinding> {
                     @Override
                     public void onError(Throwable e) {
                         Logger.e(e, "");
+                        DialogHelper.changeProgressDialog(getContext(), R.string.error_occurred,
+                                SweetAlertDialog.ERROR_TYPE);
                     }
 
                     @Override
@@ -112,6 +115,8 @@ public class CatViewModel extends BaseCatViewModel<FragmentCatBinding> {
                     @Override
                     public void onError(Throwable e) {
                         Logger.e(e, "");
+                        DialogHelper.changeProgressDialog(getContext(), R.string.error_occurred,
+                                SweetAlertDialog.ERROR_TYPE);
                     }
 
                     @Override
@@ -146,11 +151,13 @@ public class CatViewModel extends BaseCatViewModel<FragmentCatBinding> {
                     @Override
                     public void onError(Throwable e) {
                         Logger.e(e, "");
+                        DialogHelper.showDialog(getContext(), R.string.error_occurred,
+                                SweetAlertDialog.ERROR_TYPE);
                     }
 
                     @Override
                     public void onNext(GetImageResponse getImageResponse) {
-                        cat.set(getImageResponse.getData().getImages().getImage());
+                        cat.set(getImageResponse.getData().getImages().get(0));
                     }
                 });
     }
