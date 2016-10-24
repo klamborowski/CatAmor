@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:fresco="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="pl.klamborowski.catamor.section.cat.CatViewModel"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/default_padding">
+
+
+        <RelativeLayout
+            android:id="@+id/buttons_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:paddingTop="@dimen/default_padding">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:layout_width="@dimen/btn_size"
+                android:layout_height="@dimen/btn_size"
+                fresco:backgroundImage="@color/violet"
+                fresco:placeholderImage="@drawable/ic_action_favorite"
+                fresco:placeholderImageScaleType="centerInside"
+                fresco:roundAsCircle="true"/>
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:layout_width="@dimen/btn_size"
+                android:layout_height="@dimen/btn_size"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:onClick="@{viewModel.onLikeClicked}"
+                fresco:backgroundImage="@color/violet"
+                fresco:placeholderImage="@drawable/ic_action_favorite"
+                fresco:placeholderImageScaleType="centerInside"
+                fresco:roundAsCircle="true"/>
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:layout_width="@dimen/btn_size"
+                android:layout_height="@dimen/btn_size"
+                android:layout_centerHorizontal="true"
+                android:onClick="@{viewModel.onFavBtnClicked}"
+                fresco:backgroundImage="@android:color/darker_gray"
+                fresco:placeholderImage="@{viewModel.cat.favourite ? @drawable/ic_fav_on : @drawable/ic_fav_off}"
+                fresco:placeholderImageScaleType="centerInside"
+                fresco:roundAsCircle="true"/>
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:layout_width="@dimen/btn_size"
+                android:layout_height="@dimen/btn_size"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:onClick="@{viewModel.onIgnoreClicked}"
+                fresco:backgroundImage="@color/orange"
+                fresco:placeholderImage="@drawable/ic_navigation_close"
+                fresco:placeholderImageScaleType="centerInside"
+                fresco:roundAsCircle="true"/>
+        </RelativeLayout>
+
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/buttons_container"
+            android:onClick="@{viewModel.openCatInBrowser}"
+            app:imageUrl="@{viewModel.cat.url}"
+            fresco:fadeDuration="300"
+            fresco:progressBarAutoRotateInterval="1000"
+            fresco:progressBarImage="@mipmap/image_progress"
+            fresco:progressBarImageScaleType="centerInside"
+            fresco:roundedCornerRadius="5dp"
+            fresco:roundingBorderColor="@{viewModel.cat != null ? @color/pomegranate : @android:color/transparent}"
+            fresco:roundingBorderWidth="2dp"
+            />
+
+    </RelativeLayout>
+</layout>

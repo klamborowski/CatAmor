@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="pl.klamborowski.catamor.preferences.AccountManager"/>
+
+        <import type="pl.klamborowski.catamor.model.Account"/>
+
+        <variable
+            name="viewModel"
+            type="pl.klamborowski.catamor.section.home.HomeViewModel"/>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/drawer_header_height"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorAccent">
+
+
+        <TextView
+            android:id="@+id/drawer_user_name"
+            style="@style/DrawerHeaderUserName"
+            android:text="@{AccountManager.getInstance().getAccount().getName()}"
+            tools:text="Name user"/>
+    </RelativeLayout>
+
+</layout>

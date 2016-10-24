@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:fresco="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="pl.klamborowski.catamor.section.favourites.FavouriteItemViewModel"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/default_grid_padding">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/buttons_container"
+            android:onClick="@{viewModel.openCatInBrowser}"
+            app:imageUrl="@{viewModel.catImage.url}"
+            fresco:fadeDuration="300"
+            fresco:progressBarAutoRotateInterval="1000"
+            fresco:progressBarImage="@mipmap/image_progress"
+            fresco:progressBarImageScaleType="centerInside"
+            fresco:roundedCornerRadius="5dp"
+            fresco:roundingBorderColor="@{viewModel.catImage != null ? @color/pomegranate : @android:color/transparent}"
+            fresco:roundingBorderWidth="2dp"
+            fresco:viewAspectRatio="1"
+            />
+    </RelativeLayout>
+</layout>
